@@ -1,5 +1,5 @@
 {
-    "name": "johnitvn/yii2-ajaxcrud",
+    "name": "s4studio/yii2-ajaxcrud",
     "description": "Gii CRUD template for Single Page Ajax Administration for yii2",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","ajax","crud","gii","template","database"],
@@ -9,26 +9,32 @@
             "name": "John Martin",
             "email": "john.itvn@gmail.com",
             "homepage": "https://github.com/johnitvn?tab=repositories"
+        },
+        {
+            "name": "Edmund Kawalec",
+            "email": "e.kawalec@s4studio.pl",
+            "homepage": "https://github.com/s4studio?tab=repositories"
         }
     ],
     "support": {
-        "issues": "https://github.com/johnitvn/yii2-ajaxcrud/issues?state=open",
-        "source": "https://github.com/johnitvn/yii2-ajaxcrud"
+        "issues": "https://github.com/s4studio/yii2-ajaxcrud/issues?state=open",
+        "source": "https://github.com/s4studio/yii2-ajaxcrud"
     },
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-bootstrap4": "*",
-	    "kartik-v/yii2-grid": "^3.0.4",
+        "yiisoft/yii2-bootstrap4": "*",	    
+        "yiisoft/yii2-bootstrap5": "*",
+	"kartik-v/yii2-grid": "^3.0.4",
         "kartik-v/yii2-mpdf": "^1.0.0",
         "kartik-v/yii2-editable": "^1.7.3"
     },
     "autoload": {
         "psr-4": {
-            "johnitvn\\ajaxcrud\\": "src/"
+            "s4studio\\ajaxcrud\\": "src/"
         }
     },
     "extra": {
-        "bootstrap": "johnitvn\\ajaxcrud\\Bootstrap"
+        "bootstrap": "s4studio\\ajaxcrud\\Bootstrap"
     }
 }
