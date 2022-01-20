@@ -5,7 +5,6 @@ yii2-ajaxcrud-bs5
 [![Total Downloads](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/downloads)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5) 
 [![Latest Unstable Version](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/v/unstable)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5) 
 [![License](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/license)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
-[![PHP Version Require](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/require/php)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
 
 Gii CRUD template for Single Page Ajax Administration for [yii2](https://yiiframework.com) using [Bootstrap5](https://getbootstrap.com)
 

@@ -16,7 +16,7 @@ echo "<?php\n";
 ?>
 use yii\helpers\Url;
 use yii\helpers\Html;
-use yii\bootstrap4\Modal;
+use yii\bootstrap5\Modal;
 use kartik\grid\GridView;
 use s4studio\ajaxcrud\CrudAsset;
 use s4studio\ajaxcrud\BulkButtonWidget;
@@ -60,7 +60,7 @@ CrudAsset::register($this);
                             'buttons'=>Html::a('<i class="fas fa-trash"></i>&nbsp; Delete All',
                                 ["bulkdelete"] ,
                                 [
-                                    "class"=>"btn btn-danger btn-xs",
+                                    "class"=>"btn btn-danger btn-sm",
                                     'role'=>'modal-remote-bulk',
                                     'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
                                     'data-request-method'=>'post',

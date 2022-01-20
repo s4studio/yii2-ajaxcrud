@@ -17,13 +17,12 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/s4studio/yii2-ajaxcrud/issues?state=open",
-        "source": "https://github.com/s4studio/yii2-ajaxcrud"
+        "issues": "https://github.com/s4studio/yii2-ajaxcrud-bs5/issues?state=open",
+        "source": "https://github.com/s4studio/yii2-ajaxcrud-bs5"
     },
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-bootstrap4": "*",	    
         "yiisoft/yii2-bootstrap5": "*",
 	"kartik-v/yii2-grid": "^3.0.4",
         "kartik-v/yii2-mpdf": "^1.0.0",

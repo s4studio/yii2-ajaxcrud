@@ -2,7 +2,6 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
-use yii\bootstrap4\Modal;
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 
@@ -57,9 +56,9 @@ return [
         'urlCreator' => function($action, $model, $key, $index) {
                 return Url::to([$action,'<?=substr($actionParams,1)?>'=>$key]);
         },
-        'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip'],
-        'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip'],
-        'deleteOptions'=>['role'=>'modal-remote','title'=>'Delete',
+        'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip', 'class' => 'me-1 text-primary'],
+        'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip', 'class' => 'me-1 text-success'],
+        'deleteOptions'=>['role'=>'modal-remote','title'=>'Delete', 'class' => 'text-danger',
                           'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
                           'data-request-method'=>'post',
                           'data-toggle'=>'tooltip',
