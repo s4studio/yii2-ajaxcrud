@@ -41,9 +41,9 @@ CrudAsset::register($this);
             'columns' => require(__DIR__.'/_columns.php'),
             'toolbar'=> [
                 ['content'=>
-                    Html::a('<i class="fas fa-plus"></i>', ['create'],
+                    Html::a('<i class="bi bi-plus"></i>', ['create'],
                     ['role'=>'modal-remote','title'=> 'Create new <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>','class'=>'btn btn-secondary']).
-                    Html::a('<i class="fas fa-redo"></i>', [''],
+                    Html::a('<i class="bi bi-arrow-clockwise"></i>', [''],
                     ['data-pjax'=>1, 'class'=>'btn btn-secondary', 'title'=>'Reset Grid']).
                     '{toggleData}'.
                     '{export}'
@@ -54,10 +54,10 @@ CrudAsset::register($this);
             'responsive' => true,
             'panel' => [
                 'type' => 'primary',
-                'heading' => '<i class="fas fa-list-alt"></i> <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?> listing',
+                'heading' => '<i class="bi bi-list"></i> <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?> listing',
                 'before'=>'<em>* Resize table columns just like a spreadsheet by dragging the column edges.</em>',
                 'after'=>BulkButtonWidget::widget([
-                            'buttons'=>Html::a('<i class="fas fa-trash"></i>&nbsp; Delete All',
+                            'buttons'=>Html::a('<i class="bi bi-trash"></i>&nbsp; Delete All',
                                 ["bulkdelete"] ,
                                 [
                                     "class"=>"btn btn-danger btn-sm",
