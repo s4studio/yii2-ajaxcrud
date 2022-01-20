@@ -42,9 +42,8 @@ CrudAsset::register($this);
             'toolbar'=> [
                 ['content'=>
                     Html::a('<i class="bi bi-plus"></i>', ['create'],
-                    ['role'=>'modal-remote','title'=> 'Create new <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>','class'=>'btn btn-secondary']).
-                    Html::a('<i class="bi bi-arrow-clockwise"></i>', [''],
-                    ['data-pjax'=>1, 'class'=>'btn btn-secondary', 'title'=>'Reset Grid']).
+                    ['role'=>'modal-remote','title'=> 'Create new <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>','class'=>'btn btn-primary']).
+                    Html::a('<i class="bi bi-arrow-clockwise"></i>', [''], ['data-pjax'=>1, 'class'=>'btn btn-warning', 'title'=>'Reset Grid']).
                     '{toggleData}'.
                     '{export}'
                 ],
@@ -52,10 +51,13 @@ CrudAsset::register($this);
             'striped' => true,
             'condensed' => true,
             'responsive' => true,
+            'responsiveWrap' => false,
+            'panelHeadingTemplate' => "{title}{summary}",
+            'panelBeforeTemplate' => "{toolbarContainer}{before}",
             'panel' => [
-                'type' => 'primary',
+                'type' => '', // 'primary'
                 'heading' => '<i class="bi bi-list"></i> <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?> listing',
-                'before'=>'<em>* Resize table columns just like a spreadsheet by dragging the column edges.</em>',
+                'before' => '<em>* Resize table columns just like a spreadsheet by dragging the column edges.</em>',
                 'after'=>BulkButtonWidget::widget([
                             'buttons'=>Html::a('<i class="bi bi-trash"></i>&nbsp; Delete All',
                                 ["bulkdelete"] ,
