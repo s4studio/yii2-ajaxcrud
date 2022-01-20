@@ -71,10 +71,13 @@ function ModalRemote(modalId) {
     this.setSize = function (size) {
         $(this.dialog).removeClass('modal-lg');
         $(this.dialog).removeClass('modal-sm');
+        $(this.dialog).removeClass('modal-x-large');
         if (size == 'large')
             $(this.dialog).addClass('modal-lg');
         else if (size == 'small')
             $(this.dialog).addClass('modal-sm');
+        else if (size == 'x-large')
+            $(this.dialog).addClass('modal-x-large');
         else if (size !== 'normal')
             console.warn("Undefined size " + size);
     };
@@ -110,9 +113,8 @@ function ModalRemote(modalId) {
     this.setTitle = function (title) {
         // remove old title
         $(this.header).find('h4.modal-title').remove();
-        $(this.header).find('button.close').remove();
         // add new title
-        $(this.header).append('<h4 class="modal-title">' + title + '</h4><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>');
+        $(this.header).prepend('<h4 class="modal-title">' + title + '</h4>');
     };
 
     /**
@@ -146,7 +148,7 @@ function ModalRemote(modalId) {
     this.addFooterButton = function (label, type, classes, callback) {
         buttonElm = document.createElement('button');
         buttonElm.setAttribute('type', type === null ? 'button' : type);
-        buttonElm.setAttribute('class', classes === null ? 'btn btn-primary' : classes);
+        buttonElm.setAttribute('class', classes === null ? 'btn btn-primary btn-sm' : classes);
         buttonElm.innerHTML = label;
         var instance = this;
         $(this.footer).append(buttonElm);
@@ -203,7 +205,7 @@ function ModalRemote(modalId) {
     function errorRemoteResponse(response) {
         this.setTitle(response.status + response.statusText);
         this.setContent(response.responseText);
-        this.addFooterButton('Close', 'button', 'btn btn-default', function (button, event) {
+        this.addFooterButton('Close', 'button', 'btn btn-sm btn-default', function (button, event) {
             this.hide();
         })
     }
@@ -214,16 +216,32 @@ function ModalRemote(modalId) {
      */
     function successRemoteResponse(response) {
 
-        // check if force reload target is exists
-        if ($(response.forceReload).length > 0){
-            // Reload datatable if response contain forceReload field
-            if (response.forceReload !== undefined && response.forceReload) {
-                if (response.forceReload == 'true') {
-                    // Backwards compatible reload of fixed crud-datatable-pjax
+        // Reload datatable if response contain forceReload field
+        if (response.forceReload !== undefined && response.forceReload) {
+            if (response.forceReload == 'true') {
+                // Backwards compatible reload of fixed crud-datatable-pjax
+                if ($('#crud-datatable-pjax').length) {
                     $.pjax.reload({container: '#crud-datatable-pjax'});
-                } else {
+                }
+            } else {
+                if ($(response.forceReload).length) {
                     $.pjax.reload({container: response.forceReload});
                 }
+            }
+        }
+
+        if (response.forceUpdate !== undefined && response.forceUpdate.field !== undefined  && response.forceUpdate.content !== undefined) {
+            if ($(response.forceUpdate.field).length) {
+                $(response.forceUpdate.field).html(response.forceUpdate.content)
+            }
+        }
+
+        if (response.callback !== undefined && response.callback) {
+            try {
+                eval(response.callback);
+            }
+            catch(error) {
+                // console.log('system error:', error);
             }
         }
 
@@ -232,6 +250,8 @@ function ModalRemote(modalId) {
             this.hide();
             return;
         }
+
+
 
         if (response.size !== undefined)
             this.setSize(response.size);
@@ -312,7 +332,7 @@ function ModalRemote(modalId) {
         this.addFooterButton(
             okLabel === undefined ? this.defaults.okLabel : okLabel,
             'submit',
-            'btn btn-primary',
+            'btn btn-danger btn-sm float-right float-end',
             function (e) {
                 var data;
 
@@ -340,7 +360,7 @@ function ModalRemote(modalId) {
         this.addFooterButton(
             cancelLabel === undefined ? this.defaults.cancelLabel : cancelLabel,
             'button',
-            'btn btn-default pull-left',
+            'btn btn-sm btn-secondary float-left float-start',
             function (e) {
                 this.hide();
             }
@@ -361,6 +381,7 @@ function ModalRemote(modalId) {
      * Attributes for remote response (json)
      *   - forceReload           (string reloads a pjax ID)
      *   - forceClose            (boolean remote close modal)
+     *   - forceUpdate           (string update forceUpdate.field ID with forceUpdate.content)
      *   - size                  (string small/normal/large)
      *   - title                 (string/html title of modal box)
      *   - content               (string/html content in modal box)
