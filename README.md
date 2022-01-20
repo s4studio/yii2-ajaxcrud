@@ -1,11 +1,13 @@
 yii2-ajaxcrud-bs5
 =============
 
-[![Latest Stable Version](https://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/v/stable)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
-[![License](https://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/license)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
-[![Total Downloads](https://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/downloads)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
+[![Latest Stable Version](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/v)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5) 
+[![Total Downloads](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/downloads)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5) 
+[![Latest Unstable Version](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/v/unstable)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5) 
+[![License](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/license)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
+[![PHP Version Require](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/require/php)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
 
-Gii CRUD template for Single Page Ajax Administration for yii2
+Gii CRUD template for Single Page Ajax Administration for [yii2](https://yiiframework.com) using [Bootstrap5](https://getbootstrap.com)
 
 ![yii2 ajaxcrud extension screenshot](https://c1.staticflickr.com/1/330/18659931433_6e3db2461d_o.png "yii2 ajaxcrud extension screenshot")
 
@@ -25,13 +27,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist s4studio/yii2-ajaxcrud "dev-master"
+php composer.phar require --prefer-dist s4studio/yii2-ajaxcrud-bs5 "dev-master"
 ```
 
 or add
 
 ```
-"s4studio/yii2-ajaxcrud": "dev-master"
+"s4studio/yii2-ajaxcrud-bs5": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
@@ -48,7 +50,7 @@ Let 's add into modules config in your main config file
 'modules' => [
     'gridview' =>  [
         'class' => \kartik\grid\Module::class,
-        'bsVersion' => '4.x', // or '5.x'
+        'bsVersion' => '5.x', // or '4.x'
         // 'downloadAction' => 'gridview/export/download',
         // 'i18n' => [],
         // 'exportEncryptSalt' => 'tG85vd1',
