@@ -25,13 +25,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist johnitvn/yii2-ajaxcrud "^2.1"
+php composer.phar require --prefer-dist s4studio/yii2-ajaxcrud "dev-master"
 ```
 
 or add
 
 ```
-"johnitvn/yii2-ajaxcrud": "^2.1"
+"s4studio/yii2-ajaxcrud": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
@@ -48,7 +48,7 @@ Let 's add into modules config in your main config file
 'modules' => [
     'gridview' =>  [
         'class' => \kartik\grid\Module::class,
-        'bsVersion' => '4.x', // or '3.x'
+        'bsVersion' => '4.x', // or '5.x'
         // 'downloadAction' => 'gridview/export/download',
         // 'i18n' => [],
         // 'exportEncryptSalt' => 'tG85vd1',
