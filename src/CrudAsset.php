@@ -18,16 +18,17 @@ class CrudAsset extends AssetBundle
 
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset',
-        'yii\bootstrap5\BootstrapPluginAsset',
-        'kartik\grid\GridViewAsset',
     ];
 
     public function init()
     {
         // In dev mode use non-minified javascripts
 
-        $bsVersion = BootstrapHelper::getBsVersion();
+        $bsVersion = (int)BootstrapHelper::getBsVersion();
+        $bsVersion = $bsVersion > 3 ? $bsVersion : '';
+        $this->depends[] = 'yii\bootstrap'.$bsVersion.'\BootstrapAsset';
+        $this->depends[] = 'yii\bootstrap'.$bsVersion.'\BootstrapPluginAsset';
+        $this->depends[] = 'kartik\grid\GridViewAsset';
 
         $this->js = YII_DEBUG ? [
             'ModalRemote.js',
