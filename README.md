@@ -1,9 +1,9 @@
-yii2-ajaxcrud-bs5
+yii2-ajaxcrud for Bootstrap4 or 5
 =============
 
-[![Latest Stable Version](http://poser.pugx.org/s4studio/yii2-ajaxcrud/v)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5) 
-[![Total Downloads](http://poser.pugx.org/s4studio/yii2-ajaxcrud/downloads)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5) 
-[![License](http://poser.pugx.org/s4studio/yii2-ajaxcrud-bs5/license)](https://packagist.org/packages/s4studio/yii2-ajaxcrud-bs5)
+[![Latest Stable Version](http://poser.pugx.org/s4studio/yii2-ajaxcrud/v)](https://packagist.org/packages/s4studio/yii2-ajaxcrud) 
+[![Total Downloads](http://poser.pugx.org/s4studio/yii2-ajaxcrud/downloads)](https://packagist.org/packages/s4studio/yii2-ajaxcrud) 
+[![License](http://poser.pugx.org/s4studio/yii2-ajaxcrud/license)](https://packagist.org/packages/s4studio/yii2-ajaxcrud)
 
 Gii CRUD template for Single Page Ajax Administration for [yii2](https://yiiframework.com) using [Bootstrap4 / Bootstrap5](https://getbootstrap.com)
 
@@ -25,13 +25,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist s4studio/yii2-ajaxcrud-bs5 "dev-master"
+php composer.phar require --prefer-dist s4studio/yii2-ajaxcrud "dev-master"
 ```
 
 or add
 
 ```
-"s4studio/yii2-ajaxcrud-bs5": "dev-master"
+"s4studio/yii2-ajaxcrud": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
