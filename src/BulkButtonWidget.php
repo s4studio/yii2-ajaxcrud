@@ -18,7 +18,7 @@ class BulkButtonWidget extends Widget{
 		$iconsEngine = (int)BootstrapHelper::getBsVersion() > 4 ? 'bi bi-' : 'glyphicon glyphicon-';
 
 		$content = '<div class="float-left float-start">'.
-                   '<span class="'.$iconsEngine.'-arrow-right"></span>&nbsp;&nbsp;With selected&nbsp;&nbsp;'.
+                   '<span class="'.$iconsEngine.'arrow-right"></span>&nbsp;&nbsp;With selected&nbsp;&nbsp;'.
                    $this->buttons.
                    '</div>';
 		return $content;
