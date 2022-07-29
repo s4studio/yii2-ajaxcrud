@@ -104,8 +104,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'content'=>$this->renderAjax('view', [
                         'model' => $this->findModel(<?= $actionParams ?>),
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-start','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','<?= substr($actionParams,1) ?>'=><?= $actionParams ?>],['class'=>'btn btn-sm btn-primary float-end','role'=>'modal-remote'])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start','data-dismiss'=>"modal", 'data-bs-dismiss'=>"modal"]).
+                            Html::a('Edit',['update','<?= substr($actionParams,1) ?>'=><?= $actionParams ?>],['class'=>'btn btn-sm btn-primary float-right float-end','role'=>'modal-remote'])
                 ];
         }else{
             return $this->render('view', [
@@ -136,8 +136,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-start','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-sm btn-primary float-end','type'=>"submit"])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start','data-dismiss'=>"modal", 'data-bs-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-sm btn-primary float-right float-end','type'=>"submit"])
 
                 ];
             }else if($model->load($request->post()) && $model->save()){
@@ -145,8 +145,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'forceReload'=>'#crud-datatable-pjax',
                     'title'=> "Create new <?= $modelClass ?>",
                     'content'=>'<span class="text-success">Create <?= $modelClass ?> success</span>',
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-start','data-dismiss'=>"modal"]).
-                            Html::a('Create More',['create'],['class'=>'btn btn-sm btn-primary float-end','role'=>'modal-remote'])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start','data-dismiss'=>"modal", 'data-bs-dismiss'=>"modal"]).
+                            Html::a('Create More',['create'],['class'=>'btn btn-sm btn-primary float-right float-end','role'=>'modal-remote'])
 
                 ];
             }else{
@@ -155,8 +155,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-start', 'data-dismiss' => "modal"]).
-                                Html::button('Save',['class'=>'btn btn-sm btn-primary float-end', 'type' => "submit"])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start', 'data-dismiss' => "modal"]).
+                                Html::button('Save',['class'=>'btn btn-sm btn-primary float-right float-end', 'type' => "submit"])
 
                 ];
             }
@@ -198,8 +198,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-start','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-sm btn-primary float-end','type'=>"submit"])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start','data-dismiss'=>"modal", 'data-bs-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-sm btn-primary float-right float-end','type'=>"submit"])
                 ];
             }else if($model->load($request->post()) && $model->save()){
                 return [
@@ -208,8 +208,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'content'=>$this->renderAjax('view', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-start','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','<?= substr($actionParams,1) ?>'=><?= $actionParams ?>],['class'=>'btn btn-sm btn-primary float-end','role'=>'modal-remote'])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start', 'data-dismiss'=>"modal", 'data-bs-dismiss'=>"modal"]).
+                            Html::a('Edit',['update','<?= substr($actionParams,1) ?>'=><?= $actionParams ?>],['class'=>'btn btn-sm btn-primary float-right float-end','role'=>'modal-remote'])
                 ];
             }else{
                  return [
@@ -217,8 +217,8 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'content'=>$this->renderAjax('update', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-start','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-sm btn-primary float-end','type'=>"submit"])
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary  float-left float-start','data-dismiss'=>"modal", 'data-bs-dismiss'=>"modal"]).
+                                Html::button('Save',['class'=>'btn btn-sm btn-primary  float-right float-end','type'=>"submit"])
                 ];
             }
         }else{

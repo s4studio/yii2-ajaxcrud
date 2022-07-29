@@ -1,7 +1,9 @@
 /*!
  * Ajax Crud 
  * =================================
- * Use for johnitvn/yii2-ajaxcrud extension
+ * Use for s4studio/yii2-ajaxcrud extension
+ * Original: johnitvn/yii2-ajaxcrud
+ * @author Edmund Kawalec e.kawalec@s4studio.com
  * @author John Martin john.itvn@gmail.com
  */
 $(document).ready(function () {
@@ -47,7 +49,7 @@ $(document).ready(function () {
             modal.show();
             modal.setTitle('No selection');
             modal.setContent('You must select item(s) to use this action');
-            modal.addFooterButton("Close", 'btn btn-default', function (button, event) {
+            modal.addFooterButton("Close", 'btn btn-sm btn-default', function (button, event) {
                 this.hide();
             });
         } else {

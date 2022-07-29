@@ -1,7 +1,9 @@
 /*!
  * Modal Remote
  * =================================
- * Use for johnitvn/yii2-ajaxcrud extension
+ * Use for s4studio/yii2-ajaxcrud extension
+ * Original: johnitvn/yii2-ajaxcrud
+ * @author Edmund Kawalec e.kawalec@s4studio.com
  * @author John Martin john.itvn@gmail.com
  */
 (function ($) {
@@ -332,7 +334,7 @@ function ModalRemote(modalId) {
         this.addFooterButton(
             okLabel === undefined ? this.defaults.okLabel : okLabel,
             'submit',
-            'btn btn-danger btn-sm float-end',
+            'btn btn-danger btn-sm float-right float-end',
             function (e) {
                 var data;
 
@@ -360,7 +362,7 @@ function ModalRemote(modalId) {
         this.addFooterButton(
             cancelLabel === undefined ? this.defaults.cancelLabel : cancelLabel,
             'button',
-            'btn btn-sm btn-secondary float-start',
+            'btn btn-sm btn-secondary float-left float-start',
             function (e) {
                 this.hide();
             }

@@ -1,5 +1,6 @@
 <?php
 
+use s4studio\ajaxcrud\BootstrapHelper;
 use yii\helpers\Inflector;
 use yii\helpers\StringHelper;
 use yii\bootstrap4\Modal;
@@ -12,6 +13,9 @@ use yii\helpers\Html;
 
 $urlParams = $generator->generateUrlParams();
 $nameAttribute = $generator->getNameAttribute();
+
+$iconsEngine = (int)BootstrapHelper::getBsVersion() > 4 ? 'bi bi-' : 'glyphicon glyphicon-';
+
 echo "<?php\n";
 ?>
 use yii\helpers\Url;
@@ -41,9 +45,9 @@ CrudAsset::register($this);
             'columns' => require(__DIR__.'/_columns.php'),
             'toolbar'=> [
                 ['content'=>
-                    Html::a('<i class="bi bi-plus"></i>', ['create'],
-                    ['role'=>'modal-remote','title'=> 'Create new <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>','class'=>'btn btn-primary']).
-                    Html::a('<i class="bi bi-arrow-clockwise"></i>', [''], ['data-pjax'=>1, 'class'=>'btn btn-warning', 'title'=>'Reset Grid']).
+                    Html::a('<i class="<?= $iconsEngine ?>plus"></i>', ['create'],
+                    ['role'=>'modal-remote','title'=> 'Create new <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>','class'=>'btn btn-sm btn-primary']).
+                    Html::a('<i class="<?= $iconsEngine ?>repeat"></i>', [''], ['data-pjax'=>1, 'class'=>'btn btn-sm btn-warning', 'title'=>'Reset Grid']).
                     '{toggleData}'.
                     '{export}'
                 ],
@@ -56,15 +60,16 @@ CrudAsset::register($this);
             'panelBeforeTemplate' => "{toolbarContainer}{before}",
             'panel' => [
                 'type' => '', // 'primary'
-                'heading' => '<i class="bi bi-list"></i> <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?> listing',
+                'heading' => '<i class="<?= $iconsEngine ?>list"></i> <?= Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?> listing',
                 'before' => '<em>* Resize table columns just like a spreadsheet by dragging the column edges.</em>',
                 'after'=>BulkButtonWidget::widget([
-                            'buttons'=>Html::a('<i class="bi bi-trash"></i>&nbsp; Delete All',
+                            'buttons'=>Html::a('<i class="<?= $iconsEngine ?>trash"></i>&nbsp; Delete All',
                                 ["bulkdelete"] ,
                                 [
-                                    "class"=>"btn btn-danger btn-sm",
+                                    "class"=>"btn btn-sm btn-danger",
                                     'role'=>'modal-remote-bulk',
-                                    'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
+                                    'data-confirm'=>false,
+                                    'data-method'=>false,// for overide yii data api
                                     'data-request-method'=>'post',
                                     'data-confirm-title'=>'Are you sure?',
                                     'data-confirm-message'=>'Are you sure want to delete this item'
@@ -75,9 +80,4 @@ CrudAsset::register($this);
         ])<?="?>\n"?>
     </div>
 </div>
-<?='<?php Modal::begin([
-    "id"=>"ajaxCrudModal",
-    "title" => \'<h4 class="modal-title">Modal title</h4>\',
-    "footer"=>"",// always need it for jquery plugin
-])?>'."\n"?>
-<?='<?php Modal::end(); ?>'?>
+

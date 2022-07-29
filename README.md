@@ -55,7 +55,22 @@ Let 's add into modules config in your main config file
     ]       
 ]
 ```
+
+Insert the following code into layout main file (ex. /views/layouts/main.php)
+
+```php
+<?php 
+Modal::begin([
+    "id"=>"ajaxCrudModal",
+    "title" => '<h4 class="modal-title"></h4>',
+    "footer"=>"",
+]);
+Modal::end(); 
+?>
+```
+
 Note: Font Awesome icons not required! See [Bootstrap icons](https://demos.krajee.com/grid#bootstrap-icons)!
+
 
 You can then access Gii through the following URL:
 
@@ -65,3 +80,7 @@ and you can see <b>Ajax CRUD Generator</b>
 
 
 Lets contibute to keep it updated and make it useful for all friends.
+
+
+IMPORTANT
+-----

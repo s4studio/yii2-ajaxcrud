@@ -56,8 +56,8 @@ return [
         'urlCreator' => function($action, $model, $key, $index) {
                 return Url::to([$action,'<?=substr($actionParams,1)?>'=>$key]);
         },
-        'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip', 'class' => 'me-1 text-primary'],
-        'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip', 'class' => 'me-1 text-success'],
+        'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip', 'class' => 'mr-1 me-1 text-primary'],
+        'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip', 'class' => 'mr-1 me-1 text-success'],
         'deleteOptions'=>['role'=>'modal-remote','title'=>'Delete', 'class' => 'text-danger',
                           'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
                           'data-request-method'=>'post',
