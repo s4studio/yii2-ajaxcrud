@@ -80,7 +80,3 @@ and you can see <b>Ajax CRUD Generator</b>
 
 
 Lets contibute to keep it updated and make it useful for all friends.
-
-
-IMPORTANT
------
