@@ -155,7 +155,7 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
                     'content'=>$this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start', 'data-dismiss' => "modal"]).
+                    'footer'=> Html::button('Close',['class'=>'btn btn-sm btn-secondary float-left float-start', 'data-dismiss' => "modal", 'data-bs-dismiss'=>"modal"]).
                                 Html::button('Save',['class'=>'btn btn-sm btn-primary float-right float-end', 'type' => "submit"])
 
                 ];
